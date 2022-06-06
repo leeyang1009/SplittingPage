@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  overflow: hidden;
+  margin: 0;
+}
+h1 {
+  color: black;
+  font-size: 2rem;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  padding: 0.2rem 2rem;
+  border-radius: 50px;
+  text-align: center;
+  border: 1px solid #fff;
+}
+
+.container {
+  position: relative;
+}
+
+.split {
+  position: absolute;
+  width: 50vw;
+  height: 100%;
+}
+.split::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+}
+.split.left {
+  background-image: url("image/denmark.jpg");
+  background-size: cover;
+  background-position: center;
+
+  height: 100vh;
+  position: absolute;
+  left: 0;
+}
+.split.right {
+  background-image: url("image/italy.jpg");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+
+  height: 100vh;
+  right: 0;
+}
+
+.split .btn:hover {
+  border: black;
+  color: black;
+  background-color: white;
+}
+
+.split h1:hover {
+  color: #fff;
+}
+
+.hover-left .left {
+  width: 75vw;
+}
+
+.hover-left .right {
+  width: 25vw;
+}
+
+.hover-right .right {
+  width: 75vw;
+}
+.hover-right .left {
+  width: 25vw;
+}
+
+.hover-left .split.left::before {
+  content: none;
+}
+.hover-right .split.right::before {
+  content: none;
+}
+
+.right,
+.left,
+.split::before {
+  transition: 0.8s ease;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .btn {
+    font-size: 0.5rem;
+  }
+}
